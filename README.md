@@ -21,7 +21,7 @@ Make sure the database credentials are correct in config.inc
 
     nano config.inc
 
-Open a browser and visit http://IP_ADDR/reset-db
+Open a browser and visit http://IP_ADDR/reset-db.php
 
 If that is successful, then go to http://IP_ADDR
 
