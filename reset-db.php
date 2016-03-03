@@ -65,6 +65,7 @@ $query ="INSERT INTO `blogs_table` (`cid`, `blogger_name`, `comment`, `date`) VA
 $result = mysql_query($query);
 echo mysql_error($conn );
 
+exec("cp highscore.txt.bak highscore.txt");
 
 echo "<p>If you see no errors above, it should be done. <a href=\"index.php\">Continue back to the frontpage.</a>";
 ?>
