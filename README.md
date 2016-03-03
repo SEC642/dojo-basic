@@ -21,8 +21,8 @@ Make sure the database credentials are correct in config.inc
 
     nano config.inc
 
-Open a browser and visit http://<ip_addr>/reset-db
+Open a browser and visit http://IP_ADDR/reset-db
 
-If that is successful, then go to http://<ip_addr>
+If that is successful, then go to http://IP_ADDR
 
 Enjoy!
