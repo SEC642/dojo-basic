@@ -26,40 +26,41 @@ function checkToken( $token, $formName )
 }
 
 if ( !empty( $_POST['xsrf_token'] ) ) {
-
     if( checkToken( $_POST['xsrf_token'], 'protectedForm' ) ) {
 // Grab inputs
-$inputfromform = mysql_real_escape_string($_REQUEST["input"]);
-$showonlyuser =  $_REQUEST["show_only_user"];
-if ($inputfromform  <> "") {
-        $query = "INSERT INTO blogs_table(blogger_name, comment, date) VALUES ('".
-                $logged_in_user . "', '".
-                $inputfromform  . "', " .
-                " now() )";
+        $inputfromform = mysql_real_escape_string($_REQUEST["input"]);
+        $showonlyuser =  $_REQUEST["show_only_user"];
+        if ($inputfromform  <> "") {
+                $query = "INSERT INTO blogs_table(blogger_name, comment, date) VALUES ('".
+                        $logged_in_user . "', '".
+                        $inputfromform  . "', " .
+                        " now() )";
 
-$result = mysql_query($query);
-}
+                        $result = mysql_query($query);
+        }
 
-$query  = "SELECT * FROM blogs_table WHERE
+        $query  = "SELECT * FROM blogs_table WHERE
                 blogger_name like '{$logged_in_user}%'
                ORDER BY date DESC
                 LIMIT 0 , 100";
 
-$result = mysql_query($query) or die(mysql_error($conn) . '<p><b>SQL Statement:</b>' . $query);;
-//echo $result;
+        $result = mysql_query($query) or die(mysql_error($conn) . '<p><b>SQL Statement:</b>' . $query);;
+        //echo $result;
 
-echo 'Entries:<p>';
-while($row = mysql_fetch_array($result, MYSQL_ASSOC))
-{
-echo "<p><b>{$row['blogger_name']}:</b>({$row['date']})<br>{$row['comment']}</p>";
-}
-echo "<p>";
-
+        echo 'Entries:<p>';
+        while($row = mysql_fetch_array($result, MYSQL_ASSOC))
+        {
+                echo "<p><b>{$row['blogger_name']}:</b>({$row['date']})<br>{$row['comment']}</p>";
+        }
+        echo "<p>";
         echo "anti-XSRF token OK" , "<br> <br>";
 
     }
-
+        else {
+                echo "<BR> <BR>", "ANTI - XSRF TOKEN TAMPERED WITH!", "<BR> <BR>";
+        }
 }
+
 // Begin hints section
 if ($_COOKIE["showhints"]==1) {
         echo '<p><span style="background-color: #FFFF00">
@@ -90,8 +91,5 @@ if ($_COOKIE["showhints"]==1) {
         <b>WATCH OUT for the new anti-XSRF token!!!!</b>
         </span></p>';
 }
-
-
 ?>
 
-                                                                                                                                
