@@ -113,6 +113,7 @@ if ($dosomething  == "logout") {
 		<a href="?page=browser-info.php">Browser Info</a><br>
 		<a href="?page=dns-lookup.php">DNS Lookup</a><br>
 <?php } ?>
+		<a href="?page=debugger.php">Debugger</a></br>
 		<br>
 <!-- Check to see if admin is logged in and only show admin tool section if true --> 
 <?php if (base64_decode($_COOKIE["uid"])==1) { ?>		
