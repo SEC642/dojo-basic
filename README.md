@@ -21,8 +21,8 @@ Make sure the database credentials are correct in config.inc
 
     nano config.inc
 
-Open a browser and visit http://IP_ADDR/reset-db.php
+Open a browser and visit http://localhost/reset-db.php or the correct IP address if doing this on a remote machine.
 
-If that is successful, then go to http://IP_ADDR
+If that is successful, then go to http://localhost
 
 Enjoy!
