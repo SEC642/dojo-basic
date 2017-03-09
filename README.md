@@ -1,6 +1,6 @@
-Dependencies on Ubuntu:
+Dependencies on Debian/Ubuntu:
 
-    apt-get install apache2 mysql-server php5-mysql git
+    apt-get install apache2 mariadb-server php5-mysql git
 
 You must also create a database in mysql:
 
