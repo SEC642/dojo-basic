@@ -1,11 +1,14 @@
 Dependencies on Debian/Ubuntu:
 
-    apt-get install apache2 mariadb-server php5-mysql git
+    apt-get install apache2 mariadb-server php-mysqli git
 
 You must also create a database in mysql:
 
     mysql -u root -p
     create database dojo_basic;
+    create user 'dojo_basic'@'localhost' identified by 'letmein';
+    grant all on dojo_basic.* to 'dojo_basic'@'localhost';
+    exit
 
 Copy/extract all the dojo-basic files into your web root
 
